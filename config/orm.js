@@ -1,28 +1,21 @@
 var connection = require("../config/connection.js");
 
 var orm = {
-    selectAll: function(tableInput, cb) {
-      var queryString = "SELECT * FROM " + tableInput + ";";
-      connection.query(queryString, function(err, result) {
+    selectAll: function(table, cb) {
+      var queryString = "SELECT * FROM ??";
+      connection.query(queryString,[table], function(err, result) {
         if (err) {
           throw err;
         }
         cb(result);
-      });
+      });                                                                                                                                                          
     },
-    insertOne: function(table, cols, vals, cb) {
-      var queryString = "INSERT INTO " + table;
-  
-      queryString += " (";
-      queryString += cols.toString();
-      queryString += ") ";
-      queryString += "VALUES (";
-      queryString += printQuestionMarks(vals.length);
-      queryString += ") ";
+    insertOne: function(table, col, val, cb) {
+      var queryString = `INSERT INTO  ?? (??) VALUES (?)`;
   
       console.log(queryString);
   
-      connection.query(queryString, vals, function(err, result) {
+      connection.query(queryString,[table,col,val], function(err, result) {
         if (err) {
           throw err;
         }
@@ -31,16 +24,11 @@ var orm = {
       });
     },
     // An example of objColVals would be {name: panther, sleepy: true}
-    updateOne: function(table, objColVals, condition, cb) {
-      var queryString = "UPDATE " + table;
-  
-      queryString += " SET ";
-      queryString += objToSql(objColVals);
-      queryString += " WHERE ";
-      queryString += condition;
+    updateOne: function(table, col, whereCol, whereVal, cb) {
+      var queryString = `UPDATE ?? SET ?? WHERE ?? = ?`;
   
       console.log(queryString);
-      connection.query(queryString, function(err, result) {
+      connection.query(queryString,[table,col,whereCol,whereVal], function(err, result) {
         if (err) {
           throw err;
         }
