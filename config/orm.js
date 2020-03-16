@@ -23,12 +23,11 @@ var orm = {
         cb(result);
       });
     },
-    // An example of objColVals would be {name: panther, sleepy: true}
-    updateOne: function(table, col, whereCol, whereVal, cb) {
-      var queryString = `UPDATE ?? SET ?? WHERE ?? = ?`;
+    updateOne: function(table, col, val, whereCol, whereVal, cb) {
+      var queryString = `UPDATE ?? SET ?? = ? WHERE ?? = ?`;
   
       console.log(queryString);
-      connection.query(queryString,[table,col,whereCol,whereVal], function(err, result) {
+      connection.query(queryString,[table,col,val,whereCol,whereVal], function(err, result) {
         if (err) {
           throw err;
         }
