@@ -1,8 +1,16 @@
 var express = require("express");
-var burger_model = require("../models/burger.js");
+var burger = require("../models/burger.js");
 var router = express.Router();
 
-
+router.get("/", function(req, res) {
+  burger.selectAll(function(data) {
+    var hbsObject = {
+      burgers: data //id,burger_name,devoured(boolean)
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
+  });
+});
 
 
 

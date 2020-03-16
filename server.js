@@ -1,6 +1,4 @@
-/* var express = require("express");
-
-var orm = require("../config/orm.js");
+var express = require("express");
 
 var express = require("express");
 
@@ -17,9 +15,11 @@ app.use(express.json());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/catsController.js");
+var routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
@@ -28,16 +28,16 @@ app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
- */
+ 
 
 
 
 
 //Test orm.js
-var orm = require("./config/orm.js");
+/* var orm = require("./config/orm.js");
 var callback = function(data){
     console.log(data);
-};
+}; */
 //Test orm.selectAll()
 // orm.selectAll("burgers",callback);
 
@@ -48,10 +48,10 @@ var callback = function(data){
 //orm.updateOne('burgers','devoured',true,'id',2,callback);
 
 //Test burger.js
-var burger = require("./models/burger.js");
+/* var burger = require("./models/burger.js");
 var callback = function(data){
     console.log(data);
-};
+}; */
 //Test burger.selectAll()
 //burger.selectAll(callback);
 
@@ -59,7 +59,7 @@ var callback = function(data){
 //burger.insertOne('veggie burger',callback);
 
 //Test burger.updateOne()
-burger.updateOne('id',4,callback);
+//burger.updateOne('id',4,callback);
 
 
 
