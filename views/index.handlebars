@@ -5,7 +5,11 @@
   <ul>
     {{#each burgers}}
       {{#unless devoured}}
-      <li>{{burger_name}}</li>
+      <li>{{burger_name}}
+          <button class="devour-btn" data-id="{{id}}">
+            DEVOUR!
+          </button>
+      </li>
       {{/unless}}
     {{/each}}
   </ul>
@@ -30,5 +34,5 @@
     <input type="text" id="burger-id" name="burger-name">
   </div>
 
-  <button type="submit">Add Burger</button>
+  <button type="submit" class="submit-btn">Add Burger</button>
 </form>
