@@ -18,7 +18,12 @@ router.post("/api/burgers", function(req,res){
   });
 });
 
-
+router.put("/api/devour/:id", function(req,res){
+  burger.updateOne('id',req.params.id, function(result){
+      console.log(result);
+      res.json({result});
+  });
+});
 
 
 
