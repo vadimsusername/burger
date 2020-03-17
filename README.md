@@ -3,4 +3,4 @@ This application lets you enter the names of burgers that you would like to eat.
 
 [GitHub Repository](https://github.com/vadimsusername/burger)
 
-https://floating-ocean-23724.herokuapp.com/ | https://git.heroku.com/floating-ocean-23724.git
+[Heroku Deployment](https://floating-ocean-23724.herokuapp.com/)
