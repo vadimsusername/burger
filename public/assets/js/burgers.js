@@ -8,7 +8,7 @@ $(function(){
         };
         console.log(newBurger);
         $.ajax('/api/burgers',{type:'POST',data:newBurger}).then(function(response){
-                console.log(response);
+               // console.log(response);
                 location.reload();
         });
         
@@ -18,7 +18,7 @@ $(function(){
         var id = $(this).data('id');
         console.log(`in devour-btn event listener, value of data-id is : ${id}`);
         $.ajax(`/api/devour/${id}`,{type:'PUT', data: true}).then(function(response){
-            console.log(response);
+            //console.log(response);
             location.reload();
         });
     });
