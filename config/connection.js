@@ -22,8 +22,8 @@ if(process.env.JAWSDB_URL) {
   user: "root",
   password: process.env.MYSQL_PASS,
   database: "burgers_db"
-}); */
-
+});
+ */
 connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);

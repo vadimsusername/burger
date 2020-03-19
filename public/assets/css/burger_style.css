@@ -1,0 +1,49 @@
+body {
+    background-color: #ffd868;
+}
+header {
+    background-color: #ffa34d;
+    margin: -10px;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flex-item {
+    background-color: #ffd855;
+    color: orangered;
+    padding: 10px;
+}
+
+.form-container {
+    color: orangered;
+    display: flex;
+    justify-content: center;
+}
+
+.devour-btn {
+    margin-right: 0;
+}
+button {
+    background-color: #ffac41;
+    color:#ffd800;
+    border: 1px solid darkorange;
+}
+.create-form {
+
+}
+
+h1 {
+    text-align: center;
+    color: #ffd855;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+li {
+    list-style-type: none;
+    padding-bottom: 5px;
+
+}
